@@ -8,7 +8,7 @@ export default function App() {
   const [result, setResult] = useState(null);
 
   const signup = async () => {
-    await axios.post("http://localhost:5000/signup", {
+    await axios.post("https://golf-charity-platform-1-4hyy.onrender.com/signup", {
       email,
       password: "123"
     });
@@ -16,7 +16,7 @@ export default function App() {
   };
 
   const login = async () => {
-    await axios.post("http://localhost:5000/login", {
+    await axios.post("https://golf-charity-platform-1-4hyy.onrender.com/login", {
       email,
       password: "123"
     });
@@ -24,7 +24,7 @@ export default function App() {
   };
 
   const addScore = async () => {
-    const res = await axios.post("http://localhost:5000/add-score", {
+    const res = await axios.post("https://golf-charity-platform-1-4hyy.onrender.com/add-score", {
       email,
       score: Number(score)
     });
@@ -32,12 +32,12 @@ export default function App() {
   };
 
   const runDraw = async () => {
-    await axios.get("http://localhost:5000/run-draw");
+    await axios.get("https://golf-charity-platform-1-4hyy.onrender.com/run-draw");
     alert("Draw done");
   };
 
   const check = async () => {
-    const res = await axios.get(`http://localhost:5000/check/${email}`);
+    const res = await axios.get(`https://golf-charity-platform-1-4hyy.onrender.com/check/${email}`);
     setResult(res.data);
   };
 
